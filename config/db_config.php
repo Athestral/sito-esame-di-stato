@@ -1,8 +1,8 @@
 <?php
     $dbhost="localhost";
-    $dbname="my_ferdyerrichielloesame";
-    $dbuser="ferdyerrichielloesame";
-    $dbpassword="PrimaDel30Maggio";
+    $dbname="***";
+    $dbuser="***";
+    $dbpassword="***";
 ?>
 <!-- 
 <!?php

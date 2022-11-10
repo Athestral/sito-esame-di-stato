@@ -4,8 +4,8 @@ function encrypt_decrypt($action, $string) {
     $output = false;
 
     $encrypt_method = "AES-256-CBC";
-    $secret_key = 'sadgjakgdkjafkj';
-    $secret_iv = 'rjtufgchdngmdlaksjwe';
+    $secret_key = 'sadgjakgufgchdng';
+    $secret_iv = 'rjtaksjwemdldkjafkj';
 
     $key = hash('sha256', $secret_key);
     
