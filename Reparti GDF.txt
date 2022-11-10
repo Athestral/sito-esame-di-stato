@@ -1,0 +1,13 @@
+Comando provinciale GDF Latina
+Gruppo GDF Latina 
+Nucleo di Polizia economico-finanziaria Latina
+Compagnia GDF Latina
+Brigata GDF Cisterna di Latina
+Tenenza GDF Aprilia
+Brigata GDF Sabaudia
+Compagnia GDF Terracina
+Compagnia GDF Fondi
+Compagnia GDF Formia
+Gruppo GDF Formia
+
+Comando>Gruppo=Nucleo>Compagnia>Tenenza>Brigata

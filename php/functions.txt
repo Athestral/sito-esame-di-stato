@@ -1,0 +1,103 @@
+<?php
+function checkIfAdmin() {
+  if (isset($_SESSION['session_id'])) {
+    $session_user=$_SESSION['session_user'];
+    $sql_admin = "
+    SELECT username
+    FROM admins
+    WHERE username = '$session_user'
+    ";
+    $result_admin = mysqli_query($conn, $sql_admin);
+    if (mysqli_num_rows($result_admin) > 0 || $row['email'] === $session_user) {
+        //SE E' ADMIN O USER
+        echo $row['email'];
+    } else {
+      echo "<b>Non hai il permesso di visualizzare questo dato</b>"; 
+    }
+  } else {echo "<b>Non hai il permesso di visualizzare questo dato</b>";}
+}
+
+
+
+
+//
+if (isset($_SESSION['session_id'])) {
+  $session_user=$_SESSION['session_user'];
+  $sql_admin = "
+  SELECT username
+  FROM admins
+  WHERE username = '$session_user'
+  ";
+  $result_admin = mysqli_query($conn, $sql_admin);
+  if (mysqli_num_rows($result_admin) > 0) {
+      //SE E' ADMIN
+      $sql_reparto = "
+      SELECT *
+      FROM reparti
+      ";
+      $result_reparto = mysqli_query($conn, $sql_reparto);
+
+      if (mysqli_num_rows($result_reparto) > 0) {
+        ?>
+        <form action="?reparto=<?php echo $row_reparti['id']; ?>">
+        <select name="reparto" id="reparto">
+        <?php
+        while($row_reparti = mysqli_fetch_assoc($result_reparto)) {
+          echo "<option value=\"".$row_reparti['id']."\">".$row_reparti['descrizione']."</option>";
+        }
+        ?>
+          </select>
+          <br><br>
+          <input type="submit" value="Modifica">
+        </form>
+
+        <?php
+
+      } else {
+        echo "0 reparti";
+      }
+      //---------------------------------------------
+      
+      //---------------------------------------------
+  } else {
+    if ($row['reparto']===NULL) echo "Non ancora impostato"; else echo $row['reparto'];
+  }
+} else {
+  if ($row['reparto']===NULL) echo "Non ancora impostato"; else echo $row['reparto'];
+}
+
+
+
+
+if (isset($_SESSION['session_id'])) {
+  $session_user=$_SESSION['session_user'];
+  $sql2 = "
+  SELECT username
+  FROM admins
+  WHERE username = '$session_user'
+  ";
+  $result2 = $conn->query($sql2);
+  $roww = $result2->fetch_assoc();
+  if ($result2->num_rows > 0) {
+    $id_segnalazione=$row['id segnalazione'];
+    echo "<a href=\"?reparto=".$id_segnalazione."\" onclick=\"return confirm('Sei sicuro di voler cancellare questa segnalazione? Non potrai annullare questa operazione');\">Cancella segnalazione</a>";
+
+    if (isset($_GET['delete_s'])) {
+      //$page = $_SERVER['PHP_SELF'];
+      $id_segnalazione=$_GET['delete_s'];
+      $sec = "2";
+
+      $sql3 = "DELETE FROM segnalazioni WHERE id='$id_segnalazione'";
+
+      if (mysqli_query($conn, $sql3)) {
+        echo "<br><br>Segnalazione cancellata con successo";
+      } else {
+        echo "Errore nella cancellazione della segnalazione: " . mysqli_error($conn);
+      }
+      header("Refresh: $sec; url=segnalazioni.php");
+    }
+    echo "<br><br>";
+  }
+}
+
+?>

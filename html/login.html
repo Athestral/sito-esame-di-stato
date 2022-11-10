@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="shortcut icon" href="/gdf.jpg" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+        <link rel="stylesheet" href="../css/style_lr.css">
+        <script src="../js/functions.js"></script>
+    </head>
+    <body>
+        <div>
+            <form method="post" action="/php/login.php">
+                <h1>Login</h1>
+                <input type="email" id="user" placeholder="esempio@gmail.com" name="email" required>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <button type="submit" name="login">Accedi</button>
+            </form>
+            <button style="margin:0 auto 10 auto;" onclick="userAdmin()">Cambia tipo di login</button>
+            <a href="../index.php"><button style="margin:0 auto 10 auto;">Torna alla pagina iniziale</button></a>
+            <form method="post" action="/php/login.php">
+                <button type="submit" name="noPassword">Non ricordo la password</button>
+            
+            </form>
+        </div>
+    </body>
+</html>

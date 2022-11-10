@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Registrazione</title>
+        <link rel="shortcut icon" href="/gdf.jpg" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+        <link rel="stylesheet" href="../css/style_lr.css">
+    </head>
+    <body>
+        <div>
+            <form method="post" action="../php/register.php">
+                <h1>Registrazione</h1>
+                <input type="text" id="cognome" placeholder="Cognome" name="cognome" maxlength="50" required>
+                <input type="text" id="nome" placeholder="Nome" name="nome" required>
+                <label for="m">Uomo</label>
+                <input type="radio" id="m" name="sesso" value="m" required>
+                <label for="f">Donna</label>
+                <input type="radio" id="f" name="sesso" value="f" required>
+                <br>Data di Nascita<input type="date" id="dataNascita" placeholder="Data di Nascita" name="dataNascita" min="1920-01-31" max="2002-12-31" required>
+                <input type="text" id="luogoNascita" placeholder="Luogo di Nascita" name="luogoNascita" required>
+                <input type="text" id="indirizzo" placeholder="indirizzo" name="indirizzo" required>
+                <input type="text" id="citta" placeholder="Citta'" name="citta" required>
+                <input type="text" id="provincia" placeholder="Provincia (es. RM)" name="provincia" pattern="[A-Z]{2}" required>
+                <input type="password" id="password" placeholder="Password" name="password" minlength="8" maxlength="20" required>
+                <input type="email" id="email" placeholder="esempio@gmail.com" name="email" required>
+                <input type="number" id="telefono" placeholder="Numero di Telefono" name="telefono" minlength="10" maxlength="10" required>
+                <input type="checkbox" name="autorizzazione" value="autorizzazione" required>
+                <label for="autorizzazione"> Autorizzo il trattamento dei miei dati personali</label><br>
+                <button type="submit" name="register">Registrati</button>
+            </form>
+        </div>
+    </body>
+</html>

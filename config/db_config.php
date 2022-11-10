@@ -1,0 +1,13 @@
+<?php
+    $dbhost="localhost";
+    $dbname="my_ferdyerrichielloesame";
+    $dbuser="ferdyerrichielloesame";
+    $dbpassword="PrimaDel30Maggio";
+?>
+<!-- 
+<!?php
+    $dbhost="localhost";
+    $dbname="my_vdftutorial";
+    $dbsuer="vdftutorial";
+    $dbpassword="";
+?-->
