@@ -27,7 +27,7 @@
     <div id="mainContent">
       <div class="left">
         <div class="article">
-          <h2><i>Sito ispirato al servizio 117 della Guardia di Finanza</i></h2>
+          <h2><i>Sito per l'esame di stato ispirato al servizio 117 della Guardia di Finanza</i></h2>
           
 
         </div>
